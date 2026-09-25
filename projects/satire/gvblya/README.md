@@ -20,7 +20,7 @@
 
 ## 🔥 Живое демо
 
-👉 **[https://trixter.xyz/projects/satire/](https://trixter.xyz/projects/satire/)**
+👉 **[https://trixter.xyz/projects/satire/gvblya/](https://trixter.xyz/projects/satire/gvblya/)**
 
 ## 📜 Как это работает (Инструкция для Демиургов)
 
