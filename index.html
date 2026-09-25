@@ -1,38 +1,68 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trixter</title>
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <style>
-      body {
-        background: #0d1117;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        overflow: hidden;
-      }
-      .hero-banner {
-        width: 100vw;
-        height: 100vh;
-        background-image: url("images/hero-path.webp");
-        background-size: cover;
-        background-position: center 30%;
-        opacity: 0;
-        animation: fadeInImage 2s ease-in-out forwards;
-      }
-      @keyframes fadeInImage {
-        to {
-          opacity: 1;
-        }
-      }
-    </style>
+    <title>trixter.xyz</title>
+
+    <!-- Meta Tags for Telegram / Social Media Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="trixter.xyz" />
+    <meta
+      property="og:description"
+      content="Principal Backend Infrastructure & Architecture."
+    />
+    <meta
+      property="og:image"
+      content="https://trixter.xyz/assets/hero-path.jpg"
+    />
+    <meta property="og:url" content="https://trixter.xyz/" />
+
+    <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
-    <div class="hero-banner"></div>
+    <!-- Screen 1: The Art (100vh) -->
+    <section class="hero-section">
+      <img src="assets/hero-path.jpg" alt="---" class="hero-art" />
+      <div class="scroll-hint">Scroll down ➔</div>
+    </section>
+
+    <!-- Screen 2: Clean Tech & Production Links -->
+    <section class="info-section">
+      <div class="container">
+        <div class="project-card fade-in-element">
+          <span class="tag">PRODUCTION READY</span>
+          <h2>fx</h2>
+          <p>
+            High-performance distributed processing platform. Engineered on Go,
+            PHP 8.4 (Swoole 6), and NATS JetStream. Built for sub-microsecond
+            latency under high concurrent loads.
+          </p>
+          <div class="links-group">
+            <a href="https://fx.trixter.xyz" target="_blank" class="btn primary"
+              >Live Demo ⚡</a
+            >
+            <a
+              href="https://github.com/centaur-vova/fx"
+              target="_blank"
+              class="btn secondary"
+              >GitHub Repository</a
+            >
+          </div>
+        </div>
+
+        <footer class="site-footer fade-in-element">
+          <a
+            href="https://t.me/trixter_xyz"
+            target="_blank"
+            class="contact-link"
+            >telegram: @l3373</a
+          >
+          <span class="domain-badge">&copy; MMXXVI</span>
+        </footer>
+      </div>
+    </section>
+
+    <script src="assets/script.js"></script>
   </body>
 </html>

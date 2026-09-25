@@ -1,0 +1,243 @@
+/* Zeroing and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  background-color: #080808;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  color: #e5e5e5;
+  overflow-x: hidden;
+}
+
+/* First Screen: Fullscreen Art */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.hero-section,
+.info-section {
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.hero-art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none; /* Prevents image dragging and right-click disruption */
+}
+
+/* Pulsing Scroll Indicator */
+.scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0.4;
+  animation: pulse 2.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateY(0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-6px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.2;
+  }
+}
+
+/* Second Screen: Content Area */
+.info-section {
+  padding: 0 24px;
+  background: linear-gradient(180deg, #000000 0%, #0c0c0c 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Tech Cards Component */
+.project-card,
+.blog-card-preview {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  transition: border-color 0.3s ease;
+}
+
+.project-card:hover,
+.blog-card-preview:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #888;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #a0a0a0;
+  margin-bottom: 24px;
+}
+
+/* Buttons System */
+.links-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn.primary {
+  background-color: #fff;
+  color: #000;
+}
+
+.btn.primary:hover {
+  background-color: #eceece;
+  transform: translateY(-2px);
+}
+
+.btn.secondary {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Blog Link */
+.blog-link {
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.blog-link:hover {
+  opacity: 0.7;
+}
+
+/* Footer Section */
+.site-footer {
+  margin-top: 80px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-link {
+  color: #888;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: #fff;
+}
+
+.domain-badge {
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  letter-spacing: 1px;
+}
+
+/* Responsive Scaling */
+@media (max-width: 600px) {
+  .project-card,
+  .blog-card-preview {
+    padding: 24px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .site-footer {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
+
+/* JS Animation Styles */
+.fade-in-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
+}
+
+.fade-in-element.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
